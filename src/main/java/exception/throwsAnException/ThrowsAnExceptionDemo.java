@@ -1,7 +1,5 @@
 package exception.throwsAnException;
 
-import java.rmi.RemoteException;
-
 public class ThrowsAnExceptionDemo {
 
     public void deposit(double amount) throws RuntimeException {
@@ -9,7 +7,7 @@ public class ThrowsAnExceptionDemo {
         try {
             System.out.println(1 / 0);
         } catch (RuntimeException e) {
-            e.printStackTrace();
+            System.out.println("我不处理这个异常，留给调用者处理吧！");
             throw e;
         }
 
@@ -22,7 +20,7 @@ public class ThrowsAnExceptionDemo {
             throwsAnExceptionDemo.deposit(1);
         } catch (RuntimeException e) {
             System.out.println("main method handle it!");
-
+            throw e;
         }
     }
 
