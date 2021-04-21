@@ -1,26 +1,27 @@
 package file;
 
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 
 public class WriteData {
 
-  public static void main(String[] args) throws Exception {
-    java.io.File file = new java.io.File("scores.txt");
-    if (file.exists()) {
-      System.out.println("File already exists");
+  public static void main(String[] args) throws FileNotFoundException {
+    File file = new File("scores.txt");
+    if(file.exists()){
+      System.out.println("File already exists!");
       System.exit(0);
     }
 
-    // Create a file
-    java.io.PrintWriter output = new java.io.PrintWriter(file);
+    PrintWriter output = new PrintWriter(file);
 
-    // Write formatted output to the file
-    output.print("John T Smith ");
+    output.print("Andrew Programming ");
     output.println(90);
-    output.print("Eric K Jones ");
-    output.println(85);
 
-    // Close the file
+    output.print("Eric ");
+    output.println(80);
+
     output.close();
   }
+
 }

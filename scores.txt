@@ -1,2 +1,2 @@
-John T Smith 90
-Eric K Jones 85
+Andrew 90
+Eric 80
